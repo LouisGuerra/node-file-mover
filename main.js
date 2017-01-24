@@ -37,11 +37,12 @@ fs.readdir(dir, (err, files) => { //read dir
 			//attempt to write new edits
 			if (newdata.length != ''){
 				fs.writeFile(newdir + newfilename, newdata, (err) => {
-				if (err) {
+					if (err) {
 					errorCounter++;
 					errorLocations = errorLocations + file + ' ';
-				} else {successCounter++;}
-				eventEmitter.emit('fileFinished'); //tell event handler
+					} else {successCounter++;}
+					
+					eventEmitter.emit('fileFinished'); //tell event handler
 				});
 			}
 		});
