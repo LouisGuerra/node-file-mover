@@ -18,34 +18,34 @@ fs.readdir(dir, (err, files) => { //read dir
 	countFiles = files.length; //how many files?
 	//iter through files
   	files.forEach(file => {   
-    fs.readFile(dir + file, function (err, data) {
-    	var newdata = ''
-   		if (err) return console.error(err);
-   		var newfilename = rename(file); //fetch the name for our new file
+		fs.readFile(dir + file, function (err, data) {
+			var newdata = ''
+			if (err) return console.error(err);
+			var newfilename = rename(file); //fetch the name for our new file
 
-   		//edit JSON and text files differently
-   		if (path.extname(file) === '.txt'){
-   			newdata = append.appendToTxt(data, [file, dir, newfilename, newdir], dataHeaders);
-   		} else if (path.extname(file) === '.json'){
-   			newdata = append.appendToJson(data, [file, dir, newfilename, newdir], dataHeaders);
-   		} else { 
-   			console.log("invalid file extension found!")
-   			errorCounter++;
-   			errorLocations = errorLocations + file + ' ';
-   			eventEmitter.emit('fileFinished');  //tell event handler
-   		}
-   		//attempt to write new edits
-   		if (newdata.length != ''){
-   			fs.writeFile(newdir + newfilename, newdata, (err) => {
-			if (err) {
-  				errorCounter++;
-   				errorLocations = errorLocations + file + ' ';
-  			} else {successCounter++;}
-	  		eventEmitter.emit('fileFinished'); //tell event handler
-			});
-   		}
-	});
-  });
+			//edit JSON and text files differently
+			if (path.extname(file) === '.txt'){
+				newdata = append.appendToTxt(data, [file, dir, newfilename, newdir], dataHeaders);
+			} else if (path.extname(file) === '.json'){
+				newdata = append.appendToJson(data, [file, dir, newfilename, newdir], dataHeaders);
+			} else { 
+				console.log("invalid file extension found!")
+				errorCounter++;
+				errorLocations = errorLocations + file + ' ';
+				eventEmitter.emit('fileFinished');  //tell event handler
+			}
+			//attempt to write new edits
+			if (newdata.length != ''){
+				fs.writeFile(newdir + newfilename, newdata, (err) => {
+				if (err) {
+					errorCounter++;
+					errorLocations = errorLocations + file + ' ';
+				} else {successCounter++;}
+				eventEmitter.emit('fileFinished'); //tell event handler
+				});
+			}
+		});
+  	});
 })
 //event handler to to tell when all files are done
 var eventEmitter = new events.EventEmitter();
