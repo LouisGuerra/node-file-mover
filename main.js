@@ -28,21 +28,20 @@ fs.readdir(dir, (err, files) => { //read dir
    			newdata = append.appendToTxt(data, [file, dir, newfilename, newdir], dataHeaders);
    		} else if (path.extname(file) === '.json'){
    			newdata = append.appendToJson(data, [file, dir, newfilename, newdir], dataHeaders);
-   		} else {
+   		} else { 
    			console.log("invalid file extension found!")
    			errorCounter++;
    			errorLocations = errorLocations + file + ' ';
    			eventEmitter.emit('fileFinished');  //tell event handler
    		}
-
+   		//attempt to write new edits
    		if (newdata.length != ''){
    			fs.writeFile(newdir + newfilename, newdata, (err) => {
 			if (err) {
   				errorCounter++;
    				errorLocations = errorLocations + file + ' ';
-  			}
-  			successCounter++;
-  			eventEmitter.emit('fileFinished'); //tell event handler
+  			} else {successCounter++;}
+	  		eventEmitter.emit('fileFinished'); //tell event handler
 			});
    		}
 	});
