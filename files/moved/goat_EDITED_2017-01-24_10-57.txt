@@ -1,0 +1,6 @@
+That's not a goat. 
+that's my wife!
+Old Name: goat.txt
+Old Path: ./files/original/
+New Name: goat_EDITED_2017-01-24_10-57.txt
+New Path: ./files/moved/
