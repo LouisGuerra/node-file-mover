@@ -1,0 +1,78 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "node-file-mover",
+        "scope": null,
+        "escapedName": "node-file-mover",
+        "name": "node-file-mover",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\Interviews\\Node2"
+    ]
+  ],
+  "_from": "node-file-mover@latest",
+  "_id": "node-file-mover@2.0.4",
+  "_inCache": true,
+  "_location": "/node-file-mover",
+  "_nodeVersion": "7.4.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/node-file-mover-2.0.4.tgz_1485272896726_0.8877614103257656"
+  },
+  "_npmUser": {
+    "name": "louisguerra",
+    "email": "guerra@alumni.princeton.edu"
+  },
+  "_npmVersion": "4.1.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "node-file-mover",
+    "scope": null,
+    "escapedName": "node-file-mover",
+    "name": "node-file-mover",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/node-file-mover/-/node-file-mover-2.0.4.tgz",
+  "_shasum": "e18f9370a871b3fa7688d9882ae7478f0bafce2e",
+  "_shrinkwrap": null,
+  "_spec": "node-file-mover",
+  "_where": "D:\\Interviews\\Node2",
+  "author": {
+    "name": "Louis Guerra"
+  },
+  "dependencies": {
+    "datetime": "^0.0.3",
+    "express": "^4.14.0",
+    "node-datetime": "^1.0.0"
+  },
+  "description": "Moves files from one directory to another, while appending information about the transfer. ",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "e18f9370a871b3fa7688d9882ae7478f0bafce2e",
+    "tarball": "https://registry.npmjs.org/node-file-mover/-/node-file-mover-2.0.4.tgz"
+  },
+  "license": "ISC",
+  "main": "main.js",
+  "maintainers": [
+    {
+      "name": "louisguerra",
+      "email": "guerra@alumni.princeton.edu"
+    }
+  ],
+  "name": "node-file-mover",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "version": "2.0.4"
+}
